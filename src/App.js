@@ -1,15 +1,25 @@
 // @flow
 
-import React, { Component } from 'react'
-import logo from './logo.svg'
-import RouterLinks from './Router/router'
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import RouterLinks from "./Router/router";
 
-class App extends React.Component {
+type stateType = {
+  logged: boolean,
+  token: string
+};
+class App extends React.Component<void, stateType> {
+  state = {
+    logged: false,
+    token: ""
+  };
+  setToken = (token: string) => this.setState({ token });
   render() {
+    const { token } = this.state;
     return (
       <div className="App">
         <div className="nav-bar">
-          <RouterLinks />
+          <RouterLinks token={token} setToken={this.setToken} />
           <h1 className="App-title">Active Time</h1>
         </div>
         <style jsx>{`
@@ -29,8 +39,8 @@ class App extends React.Component {
           }
         `}</style>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
