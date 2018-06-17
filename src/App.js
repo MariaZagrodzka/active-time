@@ -1,8 +1,8 @@
 // @flow
 
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import RouterLinks from "./Router/router";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Layout from "./pages/Layout";
 
 type stateType = {
   logged: boolean,
@@ -18,17 +18,15 @@ class App extends React.Component<void, stateType> {
     const { token } = this.state;
     return (
       <div className="App">
-        <div className="nav-bar">
-          <RouterLinks token={token} setToken={this.setToken} />
-          <h1 className="App-title">Active Time</h1>
-        </div>
+        <Layout />
+
         <style jsx>{`
-          .nav-bar {
-            text-align: left;
+          .router {
+            display: flex;
+            flex-direction: row;
             background: black;
-            height: 50px;
             width: 100%;
-            position: absolute;
+            height: 100px;
           }
 
           .App-title {
@@ -36,6 +34,16 @@ class App extends React.Component<void, stateType> {
             font-size: 1.5em;
             padding: 0px;
             margin: 10px 0 0 20px;
+          }
+          li {
+            height: 70px;
+            width: 150px;
+            text-align: center;
+            line-height: 70px;
+          }
+          a {
+            color: white;
+            text-decoration: none;
           }
         `}</style>
       </div>

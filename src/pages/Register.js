@@ -91,6 +91,7 @@ class Register extends React.Component<propType, stateType> {
   };
   onFormChange = () =>
     this.setState(prevState => ({ loginForm: !prevState.loginForm }));
+  validateEmail = () => 
   render() {
     const { email, password, loginForm } = this.state;
     return (
@@ -112,6 +113,7 @@ class Register extends React.Component<propType, stateType> {
             type="submit"
             value={loginForm ? "Login" : "Register"}
             onClick={this.signAction}
+            disabled
           />
         </form>
         <button onClick={this.onFormChange}>
