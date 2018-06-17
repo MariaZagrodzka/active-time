@@ -49,7 +49,7 @@ class Layout extends React.Component {
       <div className="layout">
         <Router>
           <React.Fragment>
-            <Navbar token={token} />
+            <Navbar token={token} logout={this.logout} />
             <Route exact path="/" component={About} />
             <Route path="/Galeria" component={Galery} />
             <Route path="/Oferta" component={Offer} />
