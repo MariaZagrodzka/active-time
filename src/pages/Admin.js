@@ -2,13 +2,13 @@
 
 import React from 'react'
 
-const Galery = () => (
-  <div className="galery">
+const Admin = () => (
+  <div className="admin">
     <style jsx>{`
-      .galery {
+      .admin {
       }
     `}</style>
   </div>
 )
 
-export default Galery
+export default Admin
