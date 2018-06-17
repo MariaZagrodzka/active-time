@@ -1,12 +1,12 @@
 // @flow
 
-import React from 'react'
-import logo from '../main-photo.png'
+import React from "react";
+import logo from "../main-photo.png";
 
 const About = () => (
   <div className="about">
     <div className="about-image">
-      {/* <img src={logo} alt="MAIN PHOTO" /> */}
+      <img src={logo} alt="MAIN PHOTO" />
     </div>
     <style jsx>{`
       .about {
@@ -15,14 +15,14 @@ const About = () => (
       }
 
       .about-image {
-        /* align-items: center;
+        align-items: center;
         justify-content: center;
-        background: black; */
-        /* height: 10em;
-        width: 100%; */
+        background: black;
+        height: 10em;
+        width: 100%;
       }
     `}</style>
   </div>
-)
+);
 
-export default About
+export default About;

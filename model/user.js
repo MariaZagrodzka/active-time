@@ -13,13 +13,16 @@ const UserSchema = new mongoose.Schema({
   signUpDate: {
     type: Date,
     default: Date.now()
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
   }
 });
 
 UserSchema.methods.generateHash = password =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 
-UserSchema.methods.validPassword = password =>
-  bcrypt.compareSync(password, this.password);
+UserSchema.methods.validPassword = password => password === this.password;
 
 module.exports = mongoose.model("User", UserSchema);
