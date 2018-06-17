@@ -18,7 +18,7 @@ class App extends React.Component<void, stateType> {
     const { token } = this.state;
     return (
       <div className="App">
-        <Layout />
+        <Layout token={token} setToken={this.setToken} />
         <style jsx>{`
           .App {
             height: 100vh;
