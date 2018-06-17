@@ -18,7 +18,7 @@ class App extends React.Component<void, stateType> {
     const { token } = this.state
     return (
       <div className="App">
-        <Layout />
+        <Layout token={token} setToken={this.setToken} />
         <footer className="footer">
           Jeśli masz pytania, dzwoń: 123456789 :)
         </footer>

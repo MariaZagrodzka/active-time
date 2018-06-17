@@ -7,7 +7,7 @@ import Offer from './Offer'
 import Contact from './Contact'
 import Admin from './Admin'
 
-const NavBar = () => (
+const NavBar = ({ token, logout }) => (
   <div className="header">
     <div className="title-wrapper">
       <h1 className="App-title">Active Time</h1>
@@ -25,6 +25,15 @@ const NavBar = () => (
       <li>
         <Link to="/Kontakt">KONTAKT</Link>
       </li>
+      {token.length < 1 ? (
+        <li>
+          <Link to="/Rejestracja">Rejestracja</Link>
+        </li>
+      ) : (
+        <li>
+          <button onClick={logout}>Logout</button>
+        </li>
+      )}
     </ul>
     <style jsx>{`
       .nav-bar {

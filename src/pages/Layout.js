@@ -7,20 +7,70 @@ import Galery from './Galery'
 import Offer from './Offer'
 import Contact from './Contact'
 import Admin from './Admin'
+import Register from './Register'
 
-const Layout = children => (
-  <div className="layout">
-    <Router>
-      <React.Fragment>
-        <Navbar />
-        <Route exact path="/" component={About} />
-        <Route path="/Galeria" component={Galery} />
-        <Route path="/Oferta" component={Offer} />
-        <Route path="/Kontakt" component={Contact} />
-        <Route path="/Admin" component={Admin} />
-      </React.Fragment>
-    </Router>
-  </div>
-)
+class Layout extends React.Component {
+  getFromStorage = key => {
+    if (!key) {
+      return null
+    }
+    try {
+      const valueStr = localStorage.getItem(key)
+      if (valueStr) {
+        return JSON.parse(valueStr)
+      }
+      return null
+    } catch (err) {
+      return null
+    }
+  }
+  logout = () => {
+    const obj = this.getFromStorage('the_main_app')
+    if (obj && obj.token) {
+      const { token } = obj
+      fetch('http://localhost:3001/api/account/logout?token=' + token, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(json => {
+          if (json.success) {
+            this.props.setToken('')
+            localStorage.setItem('the_main_app', '')
+          }
+        })
+    }
+  }
+  render() {
+    const { token, setToken } = this.props
+    return (
+      <div className="layout">
+        <Router>
+          <React.Fragment>
+            <Navbar token={token} logout={this.logout} />
+            <Route exact path="/" component={About} />
+            <Route path="/Galeria" component={Galery} />
+            <Route path="/Oferta" component={Offer} />
+            <Route path="/Kontakt" component={Contact} />
+            <Route path="/Admin" component={Admin} />
+            <Route
+              path="/Rejestracja"
+              render={props => (
+                <Register token={token} setToken={setToken} {...props} />
+              )}
+            />
+          </React.Fragment>
+        </Router>
+        <style jsx>{`
+          .layout {
+            height: 100%;
+          }
+        `}</style>
+      </div>
+    )
+  }
+}
 
 export default Layout
