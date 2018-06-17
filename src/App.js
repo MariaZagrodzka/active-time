@@ -26,8 +26,8 @@ class App extends React.Component<void, stateType> {
           .App {
             height: 100%;
             width: 100%;
+            min-width: 400px;
           }
-
           .footer {
             background: black;
             width: 100%;
@@ -36,6 +36,7 @@ class App extends React.Component<void, stateType> {
             font-size: 0.7em;
             text-align: center;
             padding-top: 1em;
+            bottom: 0;
           }
         `}</style>
       </div>

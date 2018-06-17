@@ -37,12 +37,9 @@ const About = () => (
       <p>
         Członkowie zespołu są odpowiednio przygotowani do profesji artystycznej
         (studia muzyczne), a ich praca na scenie sprawia wrażenie wielkiej
-        przyjemności. <p>Kilka słów o sobie.</p> Mietek – absolwent Szkoły
-        Muzycznej II st. klasy perkusji. i akordeonu, specjalista od
-        nagłośnienia i oświetlenia imprez estradowych. Irek – inżynier
-        elektronik, akustyk i reżyser dźwięku (Polskie Radio) z zamiłowania
-        muzyk gitarzysta i wokalista.
-      </p>
+        przyjemności.
+      </p>{' '}
+      <p>Kilka słów o sobie.</p>
       <p>
         <b>Ania</b> – absolwentka Wyższej Szkoły Pedagogicznej o kierunku
         muzycznym( posiada umiejętność gry na pianinie ,gitarze i flecie),
@@ -70,7 +67,7 @@ const About = () => (
       <p>
         Spośród wielu imprez, które odbyły się z naszą oprawą muzyczną,
         najbardziej wspominamy
-      </p>{' '}
+      </p>
       <lu>
         <li>bal „Mistrzów Sportu” – hotel Victoria</li>
         <li> bal „Fotografów” – hotel Europejski</li>
@@ -90,7 +87,7 @@ const About = () => (
       <p>
         Graliśmy także na andrzejkach w kasynie wojskowym w Dęblinie
         (kilkakrotnie) ,w kasynach policyjnych w Lublinie i Częstochowie
-      </p>{' '}
+      </p>
       <p>
         Od wielu lat współpracujemy z firmami farmaceutycznymi zapewniając im
         oprawę muzyczną podczas imprez reklamowych i szkoleniowych
@@ -150,7 +147,7 @@ const About = () => (
       }
 
       .about--content {
-        margin: 10%;
+        margin: 5em; 10%;
       }
 
       .about--title {
@@ -167,6 +164,9 @@ const About = () => (
           rgba(0, 0, 0, 1)50%,
           rgba(0, 0, 0, 0)
         );
+      }
+      li {
+        list-style-type: none;
       }
     `}</style>
   </div>

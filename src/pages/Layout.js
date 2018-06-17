@@ -50,11 +50,11 @@ class Layout extends React.Component {
         <Router>
           <React.Fragment>
             <Navbar token={token} logout={this.logout} />
+            <div className="nav" />
             <Route exact path="/" component={About} />
             <Route path="/Galeria" component={Galery} />
             <Route path="/Oferta" component={Offer} />
             <Route path="/Kontakt" component={Contact} />
-            <Route path="/Admin" component={Admin} />
             <Route
               path="/Rejestracja"
               render={props => (
@@ -66,6 +66,12 @@ class Layout extends React.Component {
         <style jsx>{`
           .layout {
             height: 100%;
+          }
+
+          .nav {
+            background: black;
+            width: 100%;
+            height: 4.5em;
           }
         `}</style>
       </div>
