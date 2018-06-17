@@ -19,10 +19,23 @@ class App extends React.Component<void, stateType> {
     return (
       <div className="App">
         <Layout />
+        <footer className="footer">
+          Jeśli masz pytania, dzwoń: 123456789 :)
+        </footer>
         <style jsx>{`
           .App {
             height: 100%;
             width: 100%;
+          }
+
+          .footer {
+            background: black;
+            width: 100%;
+            height: 5em;
+            color: rgba(200, 200, 200, 0.8);
+            font-size: 0.7em;
+            text-align: center;
+            padding-top: 1em;
           }
         `}</style>
       </div>

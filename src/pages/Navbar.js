@@ -40,18 +40,21 @@ const NavBar = () => (
       }
       .header {
         background: black;
-        position: relative;
+        position: fixed;
         width: 100%;
         height: 4.5em;
+        z-index: 1;
       }
 
       .App-title {
         color: white;
         text-decoration: none;
         font-size: 1.5em;
-        padding: 0;
-        margin: 0 0 0 1em;
-        line-height: 3em;
+        padding: 0 0.5em 0 0.5em;
+        margin: 0.5em 0 0.5em 1em;
+        line-height: 2em;
+        border: 2px solid white;
+        border-radius: 14px;
         position: absolute;
       }
 
@@ -65,7 +68,7 @@ const NavBar = () => (
       }
 
       li:hover {
-        background: rgb(255, 255, 255, 0.1);
+        background: rgb(255, 255, 255, 0.2);
       }
 
       a {
