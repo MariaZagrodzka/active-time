@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Galery from "./Galery";
@@ -10,9 +10,9 @@ import Admin from "./Admin";
 
 const Layout = children => (
   <div className="layout">
-    <Navbar />
     <Router>
       <React.Fragment>
+        <Navbar />
         <Route exact path="/" component={About} />
         <Route path="/Galeria" component={Galery} />
         <Route path="/Oferta" component={Offer} />

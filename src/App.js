@@ -19,8 +19,10 @@ class App extends React.Component<void, stateType> {
     return (
       <div className="App">
         <Layout />
-
         <style jsx>{`
+          .App {
+            height: 100vh;
+          }
           .router {
             display: flex;
             flex-direction: row;

@@ -37,7 +37,8 @@ const NavBar = () => (
         padding: 0;
       }
       .header {
-        backgorund: black;
+        background: black;
+        height: 200px;
       }
     `}</style>
   </div>
