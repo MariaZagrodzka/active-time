@@ -187,6 +187,9 @@ class Register extends React.Component<propType, stateType> {
           .sign__btn:hover {
             background: #aaaa11;
           }
+          .sign__btn:disabled {
+            background: #aaa;
+          }
         `}</style>
       </div>
     );
