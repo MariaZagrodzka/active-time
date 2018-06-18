@@ -16,7 +16,7 @@ type propType = {
 
 class Register extends React.Component<propType, stateType> {
   state = {
-    loginForm: false,
+    loginForm: true,
     email: "",
     password: "",
     validation: false
@@ -119,45 +119,73 @@ class Register extends React.Component<propType, stateType> {
           />
           <input
             type="password"
-            placeholder="password"
+            placeholder="hasło"
             value={password}
             onChange={this.onInputChange("password")}
             className="sign-form__inp"
           />
         </div>
         <div className="sign-form__btns">
-          <button onClick={this.onFormChange}>
-            {loginForm ? "SignUp" : "SignIn"}
-          </button>
           <button
             type="submit"
             onClick={this.signAction}
             disabled={!validation}
+            className="sign__btn"
           >
-            {loginForm ? "Login" : "Register"}
+            {loginForm ? "Zaloguj" : "Zarejestruj"}
           </button>
+          {/* <button onClick={this.onFormChange}>
+            {loginForm ? "SignUp" : "SignIn"}
+          </button> */}
         </div>
         <style jsx>{`
           .sign {
-            height: 200px;
-            width: 300px;
+            height: 12em;
+            width: 24em;
             border: 1px solid #aaa;
             border-radius: 2px;
             display: flex;
             flex-direction: column;
-            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding: 25px;
           }
           .sign-form__btns {
             display: flex;
+            justify-content: center;
           }
           .sign-form {
             display: flex;
             flex-direction: column;
-            width: 80%;
-            justify-content: center;
+            width: 100%;
+            align-items: center;
           }
           .sign-form__inp {
-            height: 25px;
+            height: 3em;
+            width: 80%;
+            margin-bottom: 1em;
+            padding: 1em;
+            border: 1px solid #ccc;
+          }
+          .ico {
+            font-size: 1.5em;
+          }
+          .sign__btn {
+            width: 80%;
+            height: 3em;
+            background: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+          }
+          .sign__btn:hover {
+            background: #aaaa11;
           }
         `}</style>
       </div>

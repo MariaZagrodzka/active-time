@@ -26,6 +26,7 @@ class App extends React.Component<void, stateType> {
             width: 100%;
             min-width: 400px;
             position: relative;
+            display: flex;
           }
         `}</style>
       </div>

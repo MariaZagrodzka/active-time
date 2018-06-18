@@ -69,10 +69,12 @@ class Layout extends React.Component {
         </Router>
         <style jsx>{`
           .layout {
-            height: 100%;
+            width: 100%;
           }
           main {
             padding-top: 4.5em;
+            display: flex;
+            height: 100%;
           }
           .footer {
             background: black;
